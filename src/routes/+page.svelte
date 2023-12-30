@@ -5,7 +5,7 @@
 
 
 	let x = -50;
-	let y = -10;
+	let y = -20;
 
 	function moveWaterDrop() {
 	x = Math.random() * 10;
@@ -22,27 +22,29 @@
     
     import { onMount } from 'svelte';
 
-  let codeLines = [
-    'int main() {',
-    '    std::cout << "Hello, World!";',
-    '    return 0;',
-    '}'
-  ];
+    let codeLines = [
+        '#include <iostream>',
+        'ㅤ',
+        'int main() {',
+        '    std::cout << "Hello, World!";',
+        '    return 0;',
+        '}'
+    ];
 
-  let visibleLines = [];
-  let animationSpeed = 500; // 애니메이션 속도 (밀리초)
+    let visibleLines: string[] = [];
+    let animationSpeed = 700;
 
-  onMount(() => {
-    animateCode();
-  });
-
-  function animateCode() {
-    codeLines.forEach((line, index) => {
-      setTimeout(() => {
-        visibleLines = codeLines.slice(0, index + 1);
-      }, index * animationSpeed);
+    onMount(() => {
+        animateCode();
     });
-  }
+
+    function animateCode() {
+        codeLines.forEach((line, index) => {
+        setTimeout(() => {
+            visibleLines = codeLines.slice(0, index + 1);
+        }, index * animationSpeed);
+        });
+    }
 </script>
 <div class="water-drop" style="transform: translate({x}%, {y}%);" on:click={moveWaterDrop}></div>
 <main class="container place-content-center text-behind">
@@ -100,19 +102,6 @@
 
 		@media (width > 800px) {
 			font-size: var(--font-size-4);
-		}
-	}
-
-	.video {
-		max-width: 800px;
-		z-index: -10;
-
-		& video {
-			aspect-ratio: 16/9;
-			object-fit: cover;
-			border: 1px solid var(--border);
-			border-radius: var(--radius-1);
-			box-shadow: 0px 0px 200px hsl(180 40% 40% / 20%);
 		}
 	}
 
