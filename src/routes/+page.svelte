@@ -121,7 +121,7 @@
     transform: translate(-50%, -50%);
     font-size: 18px;
     color: white;
-    z-index: 1; /* 원 위에 텍스트가 나타날 수 있도록 설정 */
+    z-index: 1;
   }
 
   .code-container {
@@ -129,6 +129,9 @@
     flex-direction: column;
     /* height: 100vh; */
     overflow: hidden;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border: 5px solid #303030;
   }
 
   .code-line {
@@ -137,7 +140,7 @@
     overflow: hidden;
     margin: 0;
     padding: 5px;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
   }
 
   .code-line:last-child {
