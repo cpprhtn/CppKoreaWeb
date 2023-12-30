@@ -1,2 +1,157 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { fade } from '$lib/fade'
+
+	let videoEl: HTMLVideoElement
+
+
+	let x = -50;
+	let y = -10;
+
+	function moveWaterDrop() {
+	x = Math.random() * 10;
+	y = Math.random() * 10;
+	}
+
+	function autoMoveWaterDrop() {
+	setInterval(() => {
+		moveWaterDrop();
+	}, 20);
+	}
+
+	autoMoveWaterDrop(); 
+    
+    import { onMount } from 'svelte';
+
+  let codeLines = [
+    'int main() {',
+    '    std::cout << "Hello, World!";',
+    '    return 0;',
+    '}'
+  ];
+
+  let visibleLines = [];
+  let animationSpeed = 500; // 애니메이션 속도 (밀리초)
+
+  onMount(() => {
+    animateCode();
+  });
+
+  function animateCode() {
+    codeLines.forEach((line, index) => {
+      setTimeout(() => {
+        visibleLines = codeLines.slice(0, index + 1);
+      }, index * animationSpeed);
+    });
+  }
+</script>
+<div class="water-drop" style="transform: translate({x}%, {y}%);" on:click={moveWaterDrop}></div>
+<main class="container place-content-center text-behind">
+	<h1 use:fade class="heading margin-text-center capitalize">
+		C++ KOREA에 오신것을 환영합니다.
+	</h1>
+
+	<p
+		use:fade={{ duration: 0.3, delay: 0.8 }}
+		on:finish={() => videoEl.play()}
+		class="subheading margin-text-center"
+	>
+		<a href="https://cppkorea.github.io/CppCoreGuidelines/">C++ Core Guidelines</a> 는 C++ 표준 위원회에서 제작한 C++ 핵심 가이드라인을 한글화하는 프로젝트입니다.
+	</p>
+
+	<!-- <div class="video">
+		<video bind:this={videoEl} src="video.mp4" muted loop />
+	</div> -->
+    <div class="code-container">
+        {#each visibleLines as line (line)}
+          <p class="code-line">{line}</p>
+        {/each}
+      </div>
+</main>
+
+<style lang="postcss">
+	.heading {
+		max-width: 400px;
+		font-size: var(--font-size-4);
+		line-height: 1.2;
+		margin-block-start: var(--size-6);
+
+		@media (width > 800px) {
+			max-width: 800px;
+			font-size: var(--font-size-5);
+		}
+	}
+
+	.subheading {
+		max-width: 800px;
+		margin-block: var(--size-4);
+		font-size: var(--font-size-3);
+		color: var(--text-3);
+
+		& a {
+			color: var(--text-3);
+			font-weight: 600;
+			text-decoration: underline wavy;
+			text-decoration-color: var(--brand);
+
+			&:hover {
+				color: var(--brand);
+			}
+		}
+
+		@media (width > 800px) {
+			font-size: var(--font-size-4);
+		}
+	}
+
+	.video {
+		max-width: 800px;
+		z-index: -10;
+
+		& video {
+			aspect-ratio: 16/9;
+			object-fit: cover;
+			border: 1px solid var(--border);
+			border-radius: var(--radius-1);
+			box-shadow: 0px 0px 200px hsl(180 40% 40% / 20%);
+		}
+	}
+
+  .water-drop {
+    width: 2000px;
+    height: 2000px;
+    background-image: linear-gradient(303deg,#64a1ff,#88fcfe);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 1s ease-in-out;
+  }
+
+  .text-behind {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+    z-index: 1; /* 원 위에 텍스트가 나타날 수 있도록 설정 */
+  }
+
+  .code-container {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    overflow: hidden;
+  }
+
+  .code-line {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .code-line:last-child {
+    border-bottom: none;
+  }
+</style>
