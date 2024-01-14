@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { fade } from '$lib/fade'
+    import { onMount } from 'svelte';
+    import init, { compile_cpp } from '../../../wasm_cpp_compiler/pkg/wasm_cpp_compiler';
 
-	let videoEl: HTMLVideoElement
+    let videoEl: HTMLVideoElement
 
 
 	let x = -50;
@@ -20,13 +22,12 @@
 
 	autoMoveWaterDrop(); 
     
-    import { onMount } from 'svelte';
 
     let codeLines = [
         '#include <iostream>',
         'ㅤ',
         'int main() {',
-        '    std::cout << "Hello, World!";',
+        '    std::cout << "Hello, C++ Korea!";',
         '    return 0;',
         '}'
     ];
@@ -45,10 +46,23 @@
         }, index * animationSpeed);
         });
     }
+
+    let cppCode = '#include <iostream>\n\nint main() {\n    std::cout << "Hello, C++ Korea!";\n    return 0;\n}';
+    let result = 'hello';
+
+    onMount(async () => {
+        await init(); // WASM 모듈 초기화
+    });
+
+    const compileCPlusPlus = async () => {
+        result = compile_cpp(cppCode);
+    };
 </script>
 <div class="water-drop" style="transform: translate({x}%, {y}%);" on:click={moveWaterDrop}></div>
 <main class="container place-content-center text-behind">
-	<h1 use:fade class="heading margin-text-center capitalize">
+	<h1 
+        use:fade={{ duration: 0.3, delay: 0.8 }}
+        class="heading margin-text-center capitalize">
 		C++ KOREA에 오신것을 환영합니다.
 	</h1>
 
@@ -60,14 +74,20 @@
 		<a href="https://cppkorea.github.io/CppCoreGuidelines/">C++ Core Guidelines</a> 는 C++ 표준 위원회에서 제작한 C++ 핵심 가이드라인을 한글화하는 프로젝트입니다.
 	</p>
 
-	<!-- <div class="video">
-		<video bind:this={videoEl} src="video.mp4" muted loop />
-	</div> -->
     <div class="code-container">
         {#each visibleLines as line (line)}
           <p class="code-line">{line}</p>
         {/each}
       </div>
+
+      <textarea bind:value={cppCode} placeholder="Enter your C++ code"></textarea>
+      <button on:click={compileCPlusPlus}>Compile</button>
+      {#if result}
+          <div>
+              <h2>Result:</h2>
+              <pre>{result}</pre>
+          </div>
+      {/if}
 </main>
 
 <style lang="postcss">
@@ -76,6 +96,7 @@
 		font-size: var(--font-size-4);
 		line-height: 1.2;
 		margin-block-start: var(--size-6);
+        color: var(--text-1);
 
 		@media (width > 800px) {
 			max-width: 800px;
@@ -105,45 +126,64 @@
 		}
 	}
 
-  .water-drop {
-    width: 2000px;
-    height: 2000px;
-    background-image: linear-gradient(303deg,#64a1ff,#88fcfe);
-    border-radius: 50%;
-    position: absolute;
-    transition: transform 1s ease-in-out;
-  }
+    .water-drop {
+        width: 1000px;
+        height: 1000px;
+        background-image: linear-gradient(303deg,#64a1ff,#88fcfe);
+        border-radius: 50%;
+        position: absolute;
+        transition: transform 1s ease-in-out;
+    }
 
-  .text-behind {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    color: white;
-    z-index: 1;
-  }
+    .text-behind {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: white;
+        z-index: 1;
+    }
 
-  .code-container {
-    display: flex;
-    flex-direction: column;
-    /* height: 100vh; */
-    overflow: hidden;
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    border: 5px solid #303030;
-  }
+    .code-container {
+        display: flex;
+        flex-direction: column;
+        /* height: 100vh; */
+        overflow: hidden;
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        border: 5px solid #303030;
+    }
 
-  .code-line {
-    font-family: monospace;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0;
-    padding: 5px;
-    /* border-bottom: 1px solid #ccc; */
-  }
+    .code-line {
+        font-family: monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
+        padding: 5px;
+        /* border-bottom: 1px solid #ccc; */
+    }
 
-  .code-line:last-child {
-    border-bottom: none;
-  }
+    .code-line:last-child {
+        border-bottom: none;
+    }
+
+    textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    button {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+    }
+    pre {
+        white-space: pre-wrap;
+    }
 </style>

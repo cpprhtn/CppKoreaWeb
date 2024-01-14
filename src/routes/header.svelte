@@ -39,8 +39,12 @@
 		</div>
 
 		<div class="right-side flex-items-center space-x" style:--margin="var(--size-3)">
-			<a class="icon" href="/docs" title="Docs">
+			<a class="icon" href="https://cppkorea.github.io/CppCoreGuidelines/" title="Docs">
 				docs
+			</a>
+
+			<a class="icon" href="/About" title="About">
+				About
 			</a>
 
 			<a
