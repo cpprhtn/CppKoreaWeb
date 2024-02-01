@@ -74,20 +74,12 @@
 		<a href="https://cppkorea.github.io/CppCoreGuidelines/">C++ Core Guidelines</a> 는 C++ 표준 위원회에서 제작한 C++ 핵심 가이드라인을 한글화하는 프로젝트입니다.
 	</p>
 
-    <div class="code-container">
+    <!-- <div class="code-container">
         {#each visibleLines as line (line)}
           <p class="code-line">{line}</p>
         {/each}
-      </div>
+      </div> -->
 
-      <textarea bind:value={cppCode} placeholder="Enter your C++ code"></textarea>
-      <button on:click={compileCPlusPlus}>Compile</button>
-      {#if result}
-          <div>
-              <h2>Result:</h2>
-              <pre>{result}</pre>
-          </div>
-      {/if}
 </main>
 
 <style lang="postcss">
@@ -108,7 +100,7 @@
 		max-width: 800px;
 		margin-block: var(--size-4);
 		font-size: var(--font-size-3);
-		color: var(--text-3);
+		color: var(--text-1);
 
 		& a {
 			color: var(--text-3);
@@ -127,8 +119,8 @@
 	}
 
     .water-drop {
-        width: 1000px;
-        height: 1000px;
+        width: 800px;
+        height: 800px;
         background-image: linear-gradient(303deg,#64a1ff,#88fcfe);
         border-radius: 50%;
         position: absolute;
@@ -168,22 +160,4 @@
         border-bottom: none;
     }
 
-    textarea {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 10px;
-    }
-    button {
-        width: auto;
-        padding: 10px 20px;
-        font-size: 1em;
-        background-color: #4caf50;
-        color: #fff;
-        cursor: pointer;
-        border: none;
-        border-radius: 4px;
-    }
-    pre {
-        white-space: pre-wrap;
-    }
 </style>

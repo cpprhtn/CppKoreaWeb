@@ -4,24 +4,25 @@
         <br>
         C++ Korea Meta(Facebook) Group
         <br>
-        <br>
+        <!-- <br> -->
         C++ Korea Github : github.com/cppkorea
         <br>
         C++ Korea Meta(Facebook) Group : fb.com/groups/cppkorea
         <br>
         Contrect us : contact@cppkorea.org
+        <br><br>
+        ⓒ 2018. C++ Korea Organization. All rights reserved.
     </p>
-	<div class="copyright">
-		ⓒ 2018. C++ Korea Organization. All rights reserved.
-    </div>
 </footer>
 
 <style>
     footer
     {
-        text-align: center;
-        height: 18%;
         width: 100%;
+        /* height: 110px; */
+        bottom: 0px;
+        line-height: 15px;
+        position: absolute;
     }
 
     p
@@ -31,20 +32,9 @@
         height: 100%;
         background-color:#3c3c3c;
         text-align: left;
-        font-size: 20px;
+        font-size: 16px;
         color: #aaa;
         padding: 20px;
-        overflow: auto;
-    }
-
-    .copyright
-    {
-        width: 100%;
-        color: #aaa;
-        font-size: 14px;
-        display: inline-block;
-        padding: 20px;
-        border-top: 1px solid #ddd;
         overflow: auto;
     }
 </style>
