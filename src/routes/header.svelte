@@ -48,6 +48,10 @@
 				About
 			</a>
 
+			<a class="icon" href="/Events" title="Events">
+				Events
+			</a>
+
 			<a
 				class="icon"
 				href="https://discord.gg/87SNegGZue"
