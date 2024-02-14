@@ -22,6 +22,7 @@
 	.LinkButton {
 	  margin-top: 20px;
 	  color: var(--text-3);
+	  height: 400px;
 	}
   
 	.button-container {
@@ -34,6 +35,10 @@
 	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	  transition: box-shadow 0.3s ease;
 	  width: auto;
+	}
+
+	p {
+		color: var(--text-1);
 	}
   
 	a {
@@ -62,18 +67,19 @@
 	<div class="LinkButton">
 		<a href="https://festa.io/events/4635" target="_blank" class="col-sm shadow-button">
 		  <!-- 이미지 외부경로 불러오기 -->
-		  <div class="button-container" style="height: 400px; background-image: url('/cppstudy1.png'); background-size: cover; background-position: center;">
-			리눅스 환경(WSL 포함)에서 C++ 실습하기
+		  <div class="button-container" style="height: 380px; background-image: url('/cppstudy1.png'); background-size: cover; background-position: center;">
 		  </div>
 		</a>
+		<p>리눅스 환경(WSL 포함)에서 C++ 실습하기</p>
 	</div>
 
 	<div class="LinkButton">
 		<a href="https://festa.io/events/4635" target="_blank" class="col-sm shadow-button">
 		  <!-- 이미지 외부경로 불러오기 -->
-		  <div class="button-container" style="height: 400px; background-image: url('/coreguidelines.png'); background-size: cover; background-position: center;">
-			2024년 C++ 핵심 가이드라인 스터디 첫 모임
+		  <div class="button-container" style="height: 380px; background-image: url('/coreguidelines.png'); background-size: cover; background-position: center;">
+			
 		  </div>
 		</a>
+		<p>2024년 C++ 핵심 가이드라인 스터디 첫 모임</p>
 	</div>
   </main>
