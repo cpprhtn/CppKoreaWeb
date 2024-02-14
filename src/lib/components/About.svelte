@@ -9,11 +9,6 @@
 	  text-align: center;
 	}
   
-	h1 {
-	  font-size: 2.5em;
-	  margin-bottom: 20px;
-	}
-  
 	h2 {
 	  font-size: 1.5em;
 	  margin-bottom: 10px;
@@ -68,6 +63,7 @@
 	<!-- <h1>"끊임없이 공부하고 끊임없이 노력합니다."</h1> -->
 	<h2>C++ Korea는 C++의 저변확대를 위한 보급에 힘쓰는 단체입니다.</h2>
 	<h3>C++ Korea는 Facebook에서 2013년 11월에 설립된 이래<br>비영리 단체로의 도약을 준비하고 있습니다.</h3>
+	<br>
 	<div class="LinkButtonContainer">
 	<div class="LinkButton">
 	  <a href="https://www.facebook.com/groups/cppkorea/" target="_blank" class="col-sm shadow-button">
