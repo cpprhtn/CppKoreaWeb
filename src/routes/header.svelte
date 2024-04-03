@@ -44,11 +44,11 @@
 				docs
 			</a>
 
-			<a class="icon" href="./About.html" title="About">
+			<a class="icon" href="./About" title="About">
 				About
 			</a>
 
-			<a class="icon" href="./Events.html" title="Events">
+			<a class="icon" href="./Events" title="Events">
 				Events
 			</a>
 
