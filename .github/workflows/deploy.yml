@@ -24,17 +24,15 @@ jobs:
         env:
           BASE_PATH: ''
         run: |
-          npm run preview
-
+          npm run build
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages\
