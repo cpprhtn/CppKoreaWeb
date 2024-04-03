@@ -59,6 +59,7 @@
     };
 </script>
 <div class="water-drop" style="transform: translate({x}%, {y}%);" on:click={moveWaterDrop}></div>
+<div style="height: 800px;"></div>
 <main class="container place-content-center text-behind">
 	<h1 
         use:fade={{ duration: 0.3, delay: 0.8 }}
@@ -73,8 +74,9 @@
 	>
 		<a href="https://cppkorea.github.io/CppCoreGuidelines/">C++ Core Guidelines</a> 는 C++ 표준 위원회에서 제작한 C++ 핵심 가이드라인을 한글화하는 프로젝트입니다.
 	</p>
+    <!-- <div style="height: 1000px"></div> -->
 
-    <!-- <div class="code-container">
+    <!-- <div class="code-container"></div><div class="code-container">
         {#each visibleLines as line (line)}
           <p class="code-line">{line}</p>
         {/each}

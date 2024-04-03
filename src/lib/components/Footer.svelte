@@ -22,12 +22,12 @@
         /* height: 110px; */
         bottom: 0px;
         line-height: 15px;
-        position: absolute;
+        /* position: absolute; */
     }
 
     p
     {
-        /* margin-top: 30px; */
+        margin-top: 30px;
         width: 100%;
         height: 100%;
         background-color:#3c3c3c;

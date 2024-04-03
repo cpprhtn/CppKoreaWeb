@@ -125,9 +125,7 @@
 <div>
 	<slot />
 </div>
-<!-- <footer>
-	<Footer />
-</footer> -->
+
 <style lang="postcss">
 	nav {
 		position: sticky;
