@@ -16,7 +16,7 @@ jobs:
         run: sudo apt-get install -y rsync
 
       - name: Deploy to GitHub Pages
-        run: rsync -av --delete $GITHUB_WORKSPACE/.svelte-kit/output/ $GITHUB_WORKSPACE/
+        run: rsync -av --delete /home/runner/work/CppKoreaWeb/svelte-kit/output/ $GITHUB_WORKSPACE/
 
         
       # 아래에 필요한 설정을 추가하여 GitHub Pages에 배포하는 등의 작업을 수행할 수 있습니다.
