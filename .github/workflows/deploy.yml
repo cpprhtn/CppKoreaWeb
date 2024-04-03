@@ -15,6 +15,9 @@ jobs:
       - name: Install rsync
         run: sudo apt-get install -y rsync
 
+      - name: show log
+        run: ls
+
       - name: Deploy to GitHub Pages
         run: rsync -av --delete ./.svelte-kit/output/ $GITHUB_WORKSPACE/
 
