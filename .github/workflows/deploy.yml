@@ -15,8 +15,18 @@ jobs:
       - name: Install rsync
         run: sudo apt-get install -y rsync
 
-      - name: show log
-        run: ls
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          npm run build
 
       - name: Deploy to GitHub Pages
         run: rsync -av --delete ./.svelte-kit/output/ $GITHUB_WORKSPACE/
