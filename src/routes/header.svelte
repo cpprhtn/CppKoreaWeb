@@ -33,7 +33,7 @@
 		<div class="left-side">
 			<div class="space-x" style:--margin="var(--size-0)">
 				<a class="bold" href="./">
-					<img class="logo" src="/logo.png" alt="C++ Korea" />
+					<img class="logo" src="./logo.png" alt="C++ Korea" />
 					<span>C++ Korea</span>
 				</a>
 			</div>
@@ -44,11 +44,11 @@
 				docs
 			</a>
 
-			<a class="icon" href="./About" title="About">
+			<a class="icon" href="./About.html" title="About">
 				About
 			</a>
 
-			<a class="icon" href="./Events" title="Events">
+			<a class="icon" href="./Events.html" title="Events">
 				Events
 			</a>
 
