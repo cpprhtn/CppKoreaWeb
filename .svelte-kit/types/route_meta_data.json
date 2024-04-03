@@ -1,0 +1,12 @@
+{
+	"/": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/About": [
+		"src/routes/+layout.ts"
+	],
+	"/Events": [
+		"src/routes/+layout.ts"
+	]
+}
