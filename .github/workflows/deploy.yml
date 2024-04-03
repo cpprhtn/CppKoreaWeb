@@ -42,6 +42,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Git
+        run: |
+          git config --global user.email "cpprhtn@naver.com"
+          git config --global user.name "cpprhtn"
+          git config --global push.default matching
+          
       - name: Checkout repository
         uses: actions/checkout@v2
 
