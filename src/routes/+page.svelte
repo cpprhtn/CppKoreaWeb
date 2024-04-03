@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from '$lib/fade'
     import { onMount } from 'svelte';
-    import init, { compile_cpp } from '../../../wasm_cpp_compiler/pkg/wasm_cpp_compiler';
+    // import init, { compile_cpp } from '../../../wasm_cpp_compiler/pkg/wasm_cpp_compiler';
 
     let videoEl: HTMLVideoElement
 
@@ -23,40 +23,40 @@
 	autoMoveWaterDrop(); 
     
 
-    let codeLines = [
-        '#include <iostream>',
-        'ㅤ',
-        'int main() {',
-        '    std::cout << "Hello, C++ Korea!";',
-        '    return 0;',
-        '}'
-    ];
+    // let codeLines = [
+    //     '#include <iostream>',
+    //     'ㅤ',
+    //     'int main() {',
+    //     '    std::cout << "Hello, C++ Korea!";',
+    //     '    return 0;',
+    //     '}'
+    // ];
 
-    let visibleLines: string[] = [];
-    let animationSpeed = 700;
+    // let visibleLines: string[] = [];
+    // let animationSpeed = 700;
 
-    onMount(() => {
-        animateCode();
-    });
+    // onMount(() => {
+    //     animateCode();
+    // });
 
-    function animateCode() {
-        codeLines.forEach((line, index) => {
-        setTimeout(() => {
-            visibleLines = codeLines.slice(0, index + 1);
-        }, index * animationSpeed);
-        });
-    }
+    // function animateCode() {
+    //     codeLines.forEach((line, index) => {
+    //     setTimeout(() => {
+    //         visibleLines = codeLines.slice(0, index + 1);
+    //     }, index * animationSpeed);
+    //     });
+    // }
 
-    let cppCode = '#include <iostream>\n\nint main() {\n    std::cout << "Hello, C++ Korea!";\n    return 0;\n}';
-    let result = 'hello';
+    // let cppCode = '#include <iostream>\n\nint main() {\n    std::cout << "Hello, C++ Korea!";\n    return 0;\n}';
+    // let result = 'hello';
 
-    onMount(async () => {
-        await init(); // WASM 모듈 초기화
-    });
+    // onMount(async () => {
+    //     await init(); // WASM 모듈 초기화
+    // });
 
-    const compileCPlusPlus = async () => {
-        result = compile_cpp(cppCode);
-    };
+    // const compileCPlusPlus = async () => {
+    //     result = compile_cpp(cppCode);
+    // };
 </script>
 <div class="water-drop" style="transform: translate({x}%, {y}%);" on:click={moveWaterDrop}></div>
 <div style="height: 800px;"></div>
