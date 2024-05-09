@@ -95,7 +95,7 @@
 
 		@media (width > 800px) {
 			max-width: 800px;
-			font-size: var(--font-size-5);
+			font-size: var(--font-size-55);
 		}
 
         /* @media (width < 500px) {
@@ -104,7 +104,7 @@
 	}
 
 	.subheading {
-		max-width: 600px;
+		max-width: 800px;
 		margin-block: var(--size-4);
 		font-size: var(--font-size-3);
 		color: var(--text-1);
