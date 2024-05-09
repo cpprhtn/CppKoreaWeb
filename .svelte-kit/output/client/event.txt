@@ -1,2 +1,0 @@
-https://festa.io/events/4635, cppstudy1.png, 리눅스 환경(WSL 포함)에서 C++ 실습하기
-https://festa.io/events/4635, coreguidelines.png, 2024년 C++ 핵심 가이드라인 스터디 첫 모임
