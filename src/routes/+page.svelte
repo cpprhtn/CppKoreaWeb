@@ -93,14 +93,14 @@
 		margin-block-start: var(--size-5);
         color: var(--text-1);
 
-		@media (width > 800px) {
-			max-width: 800px;
-			font-size: 4.4rem;
-		}
-
         @media (width > 1200px) {
 			max-width: 800px;
 			font-size: var(--font-size-5);
+		}
+
+		@media (width > 800px) {
+			max-width: 800px;
+			font-size: 4.4rem;
 		}
 	}
 
