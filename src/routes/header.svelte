@@ -112,7 +112,7 @@
 				</div>
 			</a>
 
-			<button on:click={toggleTheme} class="icon" aria-label="Toggle {theme} mode">
+			<button on:click={toggleTheme} class="icon hide-button" aria-label="Toggle {theme} mode">
 				{#if theme === 'dark'}
 					dark
 				{:else}
@@ -153,21 +153,41 @@
 			color: var(--brand);
 			fill: var(--brand);
 		}
+
+		@media (width < 500px) {
+			font-size: var(--font-size-2);
+		}
 	}
 
 	.logo {
-    width: 40px;
-    height: 40px;
-    display: inline-block; /* 이미지를 인라인 블록 요소로 설정 */
-    vertical-align: middle; /* 이미지를 수직 가운데 정렬 */
-    margin-right: 5px; /* 이미지와 텍스트 사이의 간격 조절 */
-  }
+		width: 40px;
+		height: 40px;
+		display: inline-block; /* 이미지를 인라인 블록 요소로 설정 */
+		vertical-align: middle; /* 이미지를 수직 가운데 정렬 */
+		margin-right: 5px; /* 이미지와 텍스트 사이의 간격 조절 */
+    }
 
-  footer {
-	width: 100%;
-	/* height: 100px; */
-	bottom: -220px;
-	position: absolute;
-	z-index: 10;
-  }
+    footer {
+		width: 100%;
+		/* height: 100px; */
+		bottom: -220px;
+		position: absolute;
+		z-index: 10;
+    }
+
+    @media screen and (max-width: 580px) {
+		.left-side .space-x a span {
+			display: none;
+		}
+		.left-side .space-x a img {
+			max-width: 40px; /* 로고 이미지의 최대 너비를 조정할 수 있습니다. */
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		.hide-button {
+			display: none;
+		}
+	}
+
 </style>

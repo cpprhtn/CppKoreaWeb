@@ -72,7 +72,8 @@
 		on:finish={() => videoEl.play()}
 		class="subheading margin-text-center"
 	>
-		<a href="https://cppkorea.github.io/CppCoreGuidelines/">C++ Core Guidelines</a> 는 C++ 표준 위원회에서 제작한 C++ 핵심 가이드라인을 한글화하는 프로젝트입니다.
+		<!-- <a href="https://cppkorea.github.io/CppCoreGuidelines/">C++ Core Guidelines</a> 는 C++ 표준 위원회에서 제작한 C++ 핵심 가이드라인을 한글화하는 프로젝트입니다. -->
+        C++ Korea는 C++의 저변확대를 위한 보급에 힘쓰는 단체입니다.
 	</p>
     <!-- <div style="height: 1000px"></div> -->
 
@@ -87,9 +88,9 @@
 <style lang="postcss">
 	.heading {
 		max-width: 400px;
-		font-size: var(--font-size-4);
+		font-size: var(--font-size-3);
 		line-height: 1.2;
-		margin-block-start: var(--size-6);
+		margin-block-start: var(--size-5);
         color: var(--text-1);
 
 		@media (width > 800px) {
@@ -121,12 +122,22 @@
 	}
 
     .water-drop {
-        width: 800px;
-        height: 800px;
+        width: 600px;
+        height: 600px;
         background-image: linear-gradient(303deg,#64a1ff,#88fcfe);
         border-radius: 50%;
         position: absolute;
-        transition: transform 1s ease-in-out;
+        transition: transform 2s ease-in-out;
+
+        @media (width > 800px) {
+			width: 800px;
+            height: 800px;
+		}
+
+        @media (width < 400px) {
+			width: 300px;
+            height: 300px;
+		}
     }
 
     .text-behind {
