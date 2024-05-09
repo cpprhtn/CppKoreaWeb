@@ -90,7 +90,7 @@
       "_app/immutable/assets/jetbrains-mono-latin-wght-normal.AI7HGr_Q.woff2"
     ],
     "css": [
-      "_app/immutable/assets/_layout.96Eacr7L.css"
+      "_app/immutable/assets/_layout.ggn-zrRb.css"
     ],
     "file": "entries/pages/_layout.svelte.js",
     "imports": [
@@ -106,7 +106,7 @@
   },
   "src/routes/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.LL_6rrDK.css"
+      "_app/immutable/assets/_page.PaUQVfEr.css"
     ],
     "file": "entries/pages/_page.svelte.js",
     "imports": [
