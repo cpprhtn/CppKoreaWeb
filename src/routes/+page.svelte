@@ -95,12 +95,13 @@
 
 		@media (width > 800px) {
 			max-width: 800px;
-			font-size: var(--font-size-55);
+			font-size: 4.4rem;
 		}
 
-        /* @media (width < 500px) {
-			font-size: var(--font-size-3);
-		} */
+        @media (width > 1200px) {
+			max-width: 800px;
+			font-size: var(--font-size-5);
+		}
 	}
 
 	.subheading {
