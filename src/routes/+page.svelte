@@ -87,8 +87,8 @@
 
 <style lang="postcss">
 	.heading {
-		max-width: 600px;
-		font-size: var(--font-size-3);
+		max-width: 250px;
+		font-size: var(--font-size-4);
 		line-height: 1.2;
 		margin-block-start: var(--size-5);
         color: var(--text-1);
@@ -98,14 +98,13 @@
 			font-size: var(--font-size-5);
 		}
 
-        @media (width > 500px) {
-			max-width: 800px;
-			font-size: var(--font-size-4);
-		}
+        /* @media (width < 500px) {
+			font-size: var(--font-size-3);
+		} */
 	}
 
 	.subheading {
-		max-width: 800px;
+		max-width: 600px;
 		margin-block: var(--size-4);
 		font-size: var(--font-size-3);
 		color: var(--text-1);
