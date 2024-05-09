@@ -60,7 +60,7 @@
 </script>
 <div class="water-drop" style="transform: translate({x}%, {y}%);" on:click={moveWaterDrop}></div>
 <div style="height: 800px;"></div>
-<main class="container place-content-center text-behind">
+<main class="container place-content-center text-behind" style="width: 80%;">
 	<h1 
         use:fade={{ duration: 0.3, delay: 0.8 }}
         class="heading margin-text-center capitalize">
@@ -87,7 +87,7 @@
 
 <style lang="postcss">
 	.heading {
-		max-width: 400px;
+		max-width: 600px;
 		font-size: var(--font-size-3);
 		line-height: 1.2;
 		margin-block-start: var(--size-5);
@@ -96,6 +96,11 @@
 		@media (width > 800px) {
 			max-width: 800px;
 			font-size: var(--font-size-5);
+		}
+
+        @media (width > 500px) {
+			max-width: 800px;
+			font-size: var(--font-size-4);
 		}
 	}
 
@@ -118,6 +123,10 @@
 
 		@media (width > 800px) {
 			font-size: var(--font-size-4);
+		}
+
+        @media (width < 500px) {
+			font-size: var(--font-size-2);
 		}
 	}
 
